@@ -3,6 +3,9 @@ from .models import Base
 from .database import engine, SessionLocal
 from .routers import post, user, auth, vote
 from fastapi.middleware.cors import CORSMiddleware
+from .config import settings
+
+print(settings.database_username)
 
 Base.metadata.create_all(bind=engine)
 
