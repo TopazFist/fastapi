@@ -1,10 +1,10 @@
 from fastapi import FastAPI
-import models
-from database import engine, SessionLocal
-from routers import post, user, auth, vote
+from .models import Base
+from .database import engine, SessionLocal
+from .routers import post, user, auth, vote
 from fastapi.middleware.cors import CORSMiddleware
 
-models.Base.metadata.create_all(bind=engine)
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 origins = ["https://www.google.com"]

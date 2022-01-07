@@ -2,10 +2,8 @@ from typing import List, Optional
 from fastapi import FastAPI, Response, status, HTTPException, Depends, APIRouter   
 from sqlalchemy.orm import Session
 from sqlalchemy import func
-from database import SessionLocal
-import oauth2
-import schemas 
-import models
+from app.database import SessionLocal
+from app import oauth2, schemas, models
 
 router = APIRouter(prefix="/posts", tags = ['Posts'])
 

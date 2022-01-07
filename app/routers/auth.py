@@ -1,11 +1,8 @@
 from fastapi import APIRouter, Depends, status, HTTPException, Response
 from sqlalchemy.orm import Session
 from starlette.status import HTTP_404_NOT_FOUND, HTTP_417_EXPECTATION_FAILED
-import schemas
-from database import SessionLocal
-import models
-import utils
-import oauth2
+from app.database import SessionLocal
+from app import oauth2, schemas, models, utils
 from fastapi.security.oauth2 import OAuth2PasswordRequestForm
 
 router = APIRouter(prefix="/login", tags=['Authentication'])
